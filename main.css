@@ -1,0 +1,50 @@
+body {
+    background-color: lightsalmon;
+}
+
+h1 {
+    text-align: center;
+}
+
+h2 {
+    font-size: 25px;
+    color: maroon;
+}
+
+.star {
+    margin-top: 20px;
+}
+
+.star-number {
+    font-size: 45px;
+    margin-top: 65px;
+    margin-left: 20px;
+}
+
+.selector {
+    margin-top: 70px;
+}
+
+.fact-family {
+    margin-top: 10px;
+    background-color: maroon;
+    border-radius: 20%;
+    width: 150px;
+    color: antiquewhite;
+}
+
+.box {
+    background-color: antiquewhite;
+    border: 8px solid black;
+    height: 350px;
+    border-radius: 10%;
+}
+
+.tracker {
+    width: 350px;
+}
+
+.quiz-box {
+    text-align: center;
+    font-size: 100px;
+}

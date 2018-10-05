@@ -1,0 +1,29 @@
+{
+  "name": "quarter-one-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev-server": "live-server .",
+    "build": "browserify scripts/main.js -o bundle.js",
+    "watch": "watchify scripts/main.js -o bundle.js",
+    "dev": "run-all \"npm run watch\" \"npm run dev-server\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/celiamarshall/quarter-one-project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/celiamarshall/quarter-one-project/issues"
+  },
+  "homepage": "https://github.com/celiamarshall/quarter-one-project#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "browserify": "^16.2.3",
+    "live-server": "^1.2.0",
+    "run-all": "^1.0.1",
+    "watchify": "^3.11.0"
+  }
+}
