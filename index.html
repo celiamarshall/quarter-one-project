@@ -13,7 +13,7 @@
     <div class="container">
         <div class="row">
 
-            <div class="col l1 selector">
+            <aside class="col l2 selector">
                 <div class="waves-effect waves-light btn-large fact-family">0 facts</div>
                 <div class="waves-effect waves-light btn-large fact-family">1 facts</div>
                 <div class="waves-effect waves-light btn-large fact-family">2 facts</div>
@@ -25,33 +25,39 @@
                 <div class="waves-effect waves-light btn-large fact-family">8 facts</div>
                 <div class="waves-effect waves-light btn-large fact-family">9 facts</div>
                 <div class="waves-effect waves-light btn-large fact-family">10 facts</div>
-            </div>
+            </aside>
 
-            <div class="col l11">
-                <div class="container">
-                    <div class="row">
-                        <div class="col l10">
-                            <h1>Multiplication Challenge</h1>
+            <div class="col l10">
+                <div class="row valign-wrapper">
+                    <div class="col l10">
+                        <h1>Multiplication Challenge</h1>
+                    </div>
+                    <div class="col l2 valign-wrapper">
+                        <img class="star" height="100px" src="star.svg">
+                        <p class="star-number">100</p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col l10">
+                        <div class="box z-depth-3">
+                            <p class="quiz-box"></p>
                         </div>
-                        <div class="col l1">
-                            <div class="valign-wrapper">
-                                <img class="star" height="100px" src="star.svg">
-                                <p class="star-number">100</p>
+                        <br>
+                        <div class="row">
+                            <form class="col l6 offset-l2">
+                                <label id="answer-label" for="answer">Your Answer:</label>
+                                <input type="number" id="answer">
+                            </form>
+                            <div class="col l4">
+                                <p class="indicator">Correct!</p>
                             </div>
                         </div>
                     </div>
-                    <div class="row">
 
-                        <div class="col l10">
-                            <div class="box z-depth-3">
-                                <p class="quiz-box">1 x 4</p>
-                            </div>
-                        </div>
-
-                        <div class="col l1">
-                            <div class="box z-depth-3 tracker">
-                                <p class ="tracker-box center-align"></p>
-                            </div>
+                    <div class="col l1">
+                        <div class="box z-depth-3 tracker">
+                            <p class ="tracker-box center-align"></p>
                         </div>
                     </div>
                 </div>

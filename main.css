@@ -48,3 +48,28 @@ h2 {
     text-align: center;
     font-size: 100px;
 }
+
+#answer-label {
+    font-size: 50px;
+    color: black;
+}
+
+#answer {
+    font-size: 50px;
+    color: black;
+    background-color: antiquewhite;
+    border: 8px solid black;
+    border-radius: 30%;
+    text-align: center;
+    padding: 10px;
+    width: 350px;
+}
+
+form {
+    margin-left: 100px;
+}
+
+.indicator {
+    margin-top:85px;
+    font-size: 40px;
+}
