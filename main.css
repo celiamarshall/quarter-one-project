@@ -46,6 +46,9 @@ h2 {
 
 .tracker {
     width: 350px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
 
 .quiz-box {
@@ -81,6 +84,6 @@ form {
 }
 
 .indicator {
-    /* margin-top:85px; */
+    margin-top: 85px;
     font-size: 40px;
 }
