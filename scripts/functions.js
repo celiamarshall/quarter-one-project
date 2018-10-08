@@ -7,7 +7,20 @@ function makeTimesTable (num) {
 }
 
 function checkAnswer (equation, answer){
-    const correctAnswer = equation[0] * equation[4]
+    let correctAnswer = null
+    if (equation[1] === '0' && equation[6] === '0'){
+        correctAnswer = 100
+    }
+    else if (equation[1] === '0'){
+        correctAnswer = 10 * equation[5]
+    }
+    else if (equation[5] === '0'){
+        correctAnswer = equation[0] * 10
+    }
+    else {
+        correctAnswer = equation[0] * equation[4]
+    }
+
     if (Number(answer) === correctAnswer){
         return true
     }

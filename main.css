@@ -69,7 +69,14 @@ form {
     margin-left: 100px;
 }
 
+.submit {
+    font-size: 30px;
+    border-radius: 20%;
+    color: maroon;
+    background-color: antiquewhite;
+}
+
 .indicator {
-    margin-top:85px;
+    /* margin-top:85px; */
     font-size: 40px;
 }
