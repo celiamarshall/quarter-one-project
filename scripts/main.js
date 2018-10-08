@@ -8,12 +8,11 @@ if (starCount){
 
 const families = document.querySelectorAll('.fact-family')
 for (family of families) {
+    family.backgroundColor = 'maroon'
     family.addEventListener('click', (event) => {
         functions.makeClickedTimesTable()
     })
 }
-
-
 
 const form = document.querySelector('form')
 form.addEventListener('submit', (event) => {

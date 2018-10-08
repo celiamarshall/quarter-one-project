@@ -2,6 +2,7 @@ const quizBox = document.querySelector('.quiz-box')
 const inputAnswer = document.querySelector('#answer')
 const trackerBox = document.querySelector('.tracker')
 const indicator = document.querySelector('.indicator')
+const families = document.querySelectorAll('.fact-family')
 let familyPickedBool = false
 let waitingToType = false
 let timesTable = []
@@ -47,8 +48,10 @@ function displayRandomQuestion(timesTable) {
     quizBox.textContent = timesTable[randomIndex]
     //remove the question at that index because it has already been attempted
     timesTable.splice(randomIndex, 1)
+    for (family of families) {
+        family.style.backgroundColor = 'maroon'
+    }
     event.target.style.backgroundColor = "#BF0808"
-
 }
 
 function makeClickedTimesTable() {
@@ -65,6 +68,12 @@ function makeClickedTimesTable() {
     trackerBox.innerHTML = ''
     displayTimesTable(timesTable)
     displayRandomQuestion(timesTable)
+
+    //set unique results key in local storage for each times table (i.e. results3 , results2 , results10)
+    //uses two characters to accomadate for the 10 fact family
+    const nameForLocalStorage = 'results' + event.target.textContent[0] + event.target.textContent[1]
+    localStorage.setItem(nameForLocalStorage, null)
+    //I WILL NEED TO CHECK FIRST FOR EXISTING RESULTS, BEFORE SETTING NEW RESULTS
 }
 
 function trackEquations(equation, answer, correctAnswer) {
@@ -84,15 +93,19 @@ function trackEquations(equation, answer, correctAnswer) {
 
 function checkAnswer(equation, answer) {
     let correctAnswer = null
+    //check to see if equation is 10 x 10
     if (equation[1] === '0' && equation[6] === '0') {
         correctAnswer = 100
     }
+    //check to see if equation is 10 x ...
     else if (equation[1] === '0') {
         correctAnswer = 10 * equation[5]
     }
+    //check to see if equation is ... x 10
     else if (equation[5] === '0') {
         correctAnswer = equation[0] * 10
     }
+    //otherwise, equation takes the format of '1 x 1'
     else {
         correctAnswer = equation[0] * equation[4]
     }
@@ -126,6 +139,10 @@ function feedbackForIndicator() {
     if (!quizBox.textContent || quizBox.textContent === 'Nice work!') {
         quizBox.textContent = ''
         inputAnswer.value = ''
+        for (family of families) {
+            family.style.backgroundColor = 'maroon'
+        }
+        trackerBox.innerHTML = ''
         indicator.textContent = 'Pick a fact family!'
         indicator.style.color = 'black'
     }
@@ -183,10 +200,10 @@ function nextQuestion() {
             if (correctCount === 11) {
                 document.querySelector('.all-tracker-equations').style.color = 'green'
             }
+            correctCount = 0
             familyPickedBool = false
         }, 1000)
     }
-
 }
 
 module.exports = {
