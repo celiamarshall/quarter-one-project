@@ -33,6 +33,10 @@ h2 {
     color: antiquewhite;
 }
 
+.fact-family:hover {
+    background-color: #BF0808;
+}
+
 .box {
     background-color: antiquewhite;
     border: 8px solid black;
