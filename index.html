@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,6 +10,7 @@
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
     <script defer src="bundle.js"></script>
 </head>
+
 <body>
     <div class="container">
         <div class="row">
@@ -43,30 +45,30 @@
                         <div class="box z-depth-3">
                             <p class="quiz-box"></p>
                         </div>
-                        <br>
-                        <div class="row">
-
-                        </div>
                     </div>
 
                     <div class="col l1">
                         <div class="box z-depth-3 tracker"></div>
                     </div>
+                </div>
 
                 <div class="row">
-                        <form class="col l4 offset-l1">
-                                <label id="answer-label" for="answer">Answer:</label>
-                                <input type="number" id="answer" autofocus>
-                                <input type="submit" class="submit">
-                            </form>
-                            <div class="col l6 offset-l1">
-                                <p class="indicator"></p>
-                            </div>
-
-                </div>
+                    <form class="col l5">
+                        <label id="answer-label" for="answer">Answer:</label>
+                        <input type="number" id="answer" autofocus>
+                        <input type="submit" class="submit">
+                    </form>
+                    <div class="col l5">
+                        <p class="indicator"></p>
+                    </div>
+                    <div class="col l1">
+                        <p class="last-time">Last Time</p>
+                        <div class="box z-depth-3 results"></div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </body>
+
 </html>

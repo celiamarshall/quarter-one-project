@@ -1,4 +1,4 @@
-const functions = require('./functions') 
+const render = require('./render') 
 
 const starsOnSite = document.querySelector('.star-number')
 let starCount = Number(localStorage.getItem('stars'))
@@ -10,7 +10,8 @@ const families = document.querySelectorAll('.fact-family')
 for (family of families) {
     family.backgroundColor = 'maroon'
     family.addEventListener('click', (event) => {
-        functions.makeClickedTimesTable()
+
+        render.makeClickedTimesTable()
     })
 }
 
@@ -18,10 +19,8 @@ const form = document.querySelector('form')
 form.addEventListener('submit', (event) => {
     event.preventDefault()
 
-    functions.feedbackForIndicator()
+    render.feedbackForIndicator()
 
-    functions.nextQuestion()
+    render.nextQuestion()
 })
-
-
 
