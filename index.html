@@ -16,52 +16,68 @@
         <div class="row">
 
             <aside class="col l2 selector">
-                <div class="waves-effect waves-light btn-large fact-family">0 facts</div>
-                <div class="waves-effect waves-light btn-large fact-family">1 facts</div>
-                <div class="waves-effect waves-light btn-large fact-family">2 facts</div>
-                <div class="waves-effect waves-light btn-large fact-family">3 facts</div>
-                <div class="waves-effect waves-light btn-large fact-family">4 facts</div>
-                <div class="waves-effect waves-light btn-large fact-family">5 facts</div>
-                <div class="waves-effect waves-light btn-large fact-family">6 facts</div>
-                <div class="waves-effect waves-light btn-large fact-family">7 facts</div>
-                <div class="waves-effect waves-light btn-large fact-family">8 facts</div>
-                <div class="waves-effect waves-light btn-large fact-family">9 facts</div>
-                <div class="waves-effect waves-light btn-large fact-family">10 facts</div>
+                <div class="waves-effect waves-light btn-large fact-family hoverable">0 facts</div>
+                <div class="waves-effect waves-light btn-large fact-family hoverable">1 facts</div>
+                <div class="waves-effect waves-light btn-large fact-family hoverable">2 facts</div>
+                <div class="waves-effect waves-light btn-large fact-family hoverable">3 facts</div>
+                <div class="waves-effect waves-light btn-large fact-family hoverable">4 facts</div>
+                <div class="waves-effect waves-light btn-large fact-family hoverable">5 facts</div>
+                <div class="waves-effect waves-light btn-large fact-family hoverable">6 facts</div>
+                <div class="waves-effect waves-light btn-large fact-family hoverable">7 facts</div>
+                <div class="waves-effect waves-light btn-large fact-family hoverable">8 facts</div>
+                <div class="waves-effect waves-light btn-large fact-family hoverable">9 facts</div>
+                <div class="waves-effect waves-light btn-large fact-family hoverable">10 facts</div>
             </aside>
 
             <div class="col l10">
-                <div class="row valign-wrapper">
-                    <div class="col l10">
+                <div class="row">
+                    <div class="col l8">
                         <h1>Multiplication Challenge</h1>
                     </div>
-                    <div class="col l2 valign-wrapper">
-                        <img class="star" height="100px" src="star.svg">
+                    <div class="col l4 valign-wrapper">
+                        <img class="star" src="star.svg">
                         <p class="star-number">0</p>
                     </div>
                 </div>
 
                 <div class="row">
-                    <div class="col l10">
-                        <div class="box z-depth-3">
+                    <div class="col l7">
+                        <div class="box z-depth-3 valign-wrapper">
                             <p class="quiz-box"></p>
                         </div>
                     </div>
 
-                    <div class="col l1">
+                    <div class="col l5">
                         <div class="box z-depth-3 tracker"></div>
                     </div>
                 </div>
 
                 <div class="row">
-                    <form class="col l5">
-                        <label id="answer-label" for="answer">Answer:</label>
-                        <input type="number" id="answer" autofocus>
-                        <input type="submit" class="submit">
-                    </form>
-                    <div class="col l5">
-                        <p class="indicator"></p>
+                    <div class="col l7">
+                        <div class="row">
+                            <div class="col l6">
+                                <form>
+                                    <label id="answer-label" for="answer">Answer:</label>
+                                    <input type="number" id="answer" autofocus>
+                                    <!-- <input type="submit" class="submit"> -->
+                                </form>
+                                <p class="indicator"></p>
+                            </div>
+                            <div class="col l6 numbers">
+                                <div class="waves-effect waves-light btn-large hoverable number-button">0</div>
+                                <div class="waves-effect waves-light btn-large hoverable number-button">1</div>
+                                <div class="waves-effect waves-light btn-large hoverable number-button">2</div>
+                                <div class="waves-effect waves-light btn-large hoverable number-button">3</div>
+                                <div class="waves-effect waves-light btn-large hoverable number-button">4</div>
+                                <div class="waves-effect waves-light btn-large hoverable number-button">5</div>
+                                <div class="waves-effect waves-light btn-large hoverable number-button">6</div>
+                                <div class="waves-effect waves-light btn-large hoverable number-button">7</div>
+                                <div class="waves-effect waves-light btn-large hoverable number-button">8</div>
+                                <div class="waves-effect waves-light btn-large hoverable number-button">9</div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col l1">
+                    <div class="col l5">
                         <p class="last-time">Last Time</p>
                         <div class="box z-depth-3 results"></div>
                     </div>

@@ -30,6 +30,11 @@ function makeClickedTimesTable() {
     templates.displayTimesTable(timesTable)
     templates.displayResultsTable(timesTable)
     templates.displayRandomQuestion(timesTable)
+    //style the chosen fact family a lighter color
+    for (family of families){
+        family.classList.remove('lighter')
+    }
+    event.target.classList.add('lighter')
 }
 
 function feedbackForIndicator() {
@@ -38,17 +43,18 @@ function feedbackForIndicator() {
         quizBox.textContent = ''
         inputAnswer.value = ''
         //when a user has ended a quiz, but they submit again, style all the buttons back to maroon so that one does not appear selected
-        for (family of families) {
-            family.style.backgroundColor = 'maroon'
+        for (family of families){
+            family.classList.remove('lighter')
         }
         trackerBox.innerHTML = ''
+        resultsBox.innerHTML = ''
         indicator.textContent = 'Pick a fact family!'
         indicator.style.color = 'black'
     }
     //if user sees a question, but did not enter answer, we are waiting for them to type, so we will not run nextQuestion
     else if (!inputAnswer.value) {
         indicator.textContent = 'Oops! Type in your answer.'
-        indicator.style.color = 'blue'
+        indicator.style.color = 'black'
         waitingToType = true
     }
     //if user has entered an answer

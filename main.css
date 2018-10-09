@@ -2,22 +2,21 @@ body {
     background-color: lightsalmon;
 }
 
+.container {
+    width: 85%;
+}
+
 h1 {
     text-align: center;
 }
 
-h2 {
-    font-size: 25px;
-    color: maroon;
-}
-
 .star {
-    margin-top: 20px;
+    height: 80px;
 }
 
 .star-number {
     font-size: 45px;
-    margin-top: 65px;
+    margin-top: 45px;
     margin-left: 20px;
 }
 
@@ -38,6 +37,10 @@ h2 {
 }
 
 .box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
     background-color: antiquewhite;
     border: 8px solid black;
     height: 300px;
@@ -45,30 +48,39 @@ h2 {
 }
 
 .tracker {
-    width: 350px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-}
-
-.last-time {
-    width: 350px;
-    text-align: center;
-    font-size: 35px;
-    margin-top: 0px;
-    margin-bottom: 0px;
+    padding: 0.5em;
 }
 
 .results {
-    width: 350px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+    padding: 0.5em;
 }
 
 .quiz-box {
-    text-align: center;
     font-size: 100px;
+}
+
+.tracker-equation {
+    font-weight: bold;
+    font-size: 30px;
+    min-width: 90px;
+    margin: 0;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.results-equation {
+    font-weight: bold;
+    font-size: 30px;
+    min-width: 90px;
+    margin: 0;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.last-time {
+    font-size: 35px;
+    margin: 0;
+    margin-left: 25px;
 }
 
 #answer-label {
@@ -83,12 +95,8 @@ h2 {
     border: 8px solid black;
     border-radius: 30%;
     text-align: center;
-    padding: 10px;
-    width: 350px;
-}
-
-form {
-    margin-left: 100px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 .submit {
@@ -99,6 +107,28 @@ form {
 }
 
 .indicator {
-    margin-top: 85px;
-    font-size: 40px;
+    margin: 0;
+    font-size: 35px;
+}
+
+.lighter {
+    background-color: #BF0808;
+}
+
+.numbers {
+    margin-top: 75px;
+}
+
+.number-button {
+    background-color: maroon;
+    border-radius: 20%;
+    color: antiquewhite;
+    width: 50px;
+    text-align: center;
+    font-size: 25px;
+    margin-top: 10px;
+}
+
+.number-button:hover {
+    background-color: #BF0808;
 }

@@ -1,5 +1,7 @@
 const render = require('./render') 
 
+const inputAnswer = document.querySelector('#answer')
+
 const starsOnSite = document.querySelector('.star-number')
 let starCount = Number(localStorage.getItem('stars'))
 if (starCount){
@@ -8,7 +10,6 @@ if (starCount){
 
 const families = document.querySelectorAll('.fact-family')
 for (family of families) {
-    family.backgroundColor = 'maroon'
     family.addEventListener('click', (event) => {
 
         render.makeClickedTimesTable()
@@ -23,4 +24,11 @@ form.addEventListener('submit', (event) => {
 
     render.nextQuestion()
 })
+
+const numberButtons = document.querySelectorAll('.number-button')
+for (button of numberButtons) {
+    button.addEventListener('click', (event) => {
+        inputAnswer.value += button.textContent
+    })
+}
 

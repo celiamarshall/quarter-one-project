@@ -14,15 +14,6 @@ function makeAnyTimesTable(num) {
 function displayTimesTable(timesTable) {
     for (equation of timesTable) {
         const newEquation = document.createElement('p')
-        if (equation === '1 x 1') {
-            newEquation.style.fontSize = '31px'
-        }
-        else {
-            newEquation.style.fontSize = '30px'
-        }
-        newEquation.style.marginRight = '25px'
-        newEquation.style.marginBottom = '10px'
-        newEquation.style.marginTop = '10px'
         newEquation.classList.add('tracker-equation')
         newEquation.textContent = equation
         trackerBox.appendChild(newEquation)
@@ -32,15 +23,7 @@ function displayTimesTable(timesTable) {
 function displayResultsTable(timesTable) {
     for (equation of timesTable) {
         const newEquation = document.createElement('p')
-        if (equation === '1 x 1') {
-            newEquation.style.fontSize = '31px'
-        }
-        else {
-            newEquation.style.fontSize = '30px'
-        }
-        newEquation.style.marginRight = '25px'
-        newEquation.style.marginBottom = '10px'
-        newEquation.style.marginTop = '10px'
+        newEquation.classList.add('results-equation')
         newEquation.textContent = equation
         //get saved answer checks (i.e. correct or incorrect) from local storage for the particular fact family 
         const localAnswerChecks = localStorage.getItem('results' + equation[0] + equation[1])
@@ -63,13 +46,7 @@ function displayRandomQuestion(timesTable) {
     let randomIndex = Math.floor(Math.random() * timesTable.length)
     quizBox.textContent = timesTable[randomIndex]
     //remove the question at that index because it has already been attempted
-    timesTable.splice(randomIndex, 1)
-    //style all buttons back to maroon
-    for (family of families) {
-        family.style.backgroundColor = 'maroon'
-    }
-    //style the chosen fact family a lighter color
-    event.target.style.backgroundColor = "#BF0808"
+    timesTable.splice(randomIndex, 1)    
 }
 
 function addNewStar() {
