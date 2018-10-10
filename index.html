@@ -35,16 +35,36 @@
                     <div class="col l8">
                         <h1>Multiplication Challenge</h1>
                     </div>
-                    <div class="col l4 valign-wrapper">
-                        <img class="star" src="star.svg">
-                        <p class="star-number">0</p>
+                    <div class="col l4">
+                        <div class="valign-wrapper star-count">
+                            <img class="star" src="star.svg">
+                            <p class="star-number">0</p>
+                        </div>
+
                     </div>
                 </header>
 
                 <div class="row">
+                    <div class="col l3 valign-wrapper timer-container">
+                        <p class="timer-label">Time Left:</p>
+                        <p class="timer"></p>
+                    </div>
+                    <div class="col l9 valign-wrapper">
+                        <p class="time-choice-label">How much time do you want?</p>
+                        <div class="waves-effect waves-light btn hoverable time-choices">45 Seconds</div>
+                        <div class="waves-effect waves-light btn hoverable time-choices">60 Seconds</div>
+                        <div class="waves-effect waves-light btn hoverable time-choices">No Timer</div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <p class="alert d-none">Oops! Choose a time limit first!</p>
+                </div>
+
+                <div class="row">
                     <div class="col l7">
-                        <div class="box z-depth-3 valign-wrapper">
-                            <p class="quiz-box"></p>
+                        <div class="box z-depth-3">
+                            <p class="quiz-box">Choose a time limit and then answer as many questions as you can!</p>
                         </div>
                     </div>
 
@@ -80,8 +100,8 @@
                         </div>
                     </div>
                     <div class="col l5">
-                        <p class="last-time">Last Time</p>
-                        <div class="box z-depth-3 results"></div>
+                        <p class="last-time hidden">Last Time</p>
+                        <div class="box z-depth-3 results hidden"></div>
                     </div>
                 </div>
             </div>

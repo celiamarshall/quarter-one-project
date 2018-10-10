@@ -19,16 +19,17 @@ function displayTimesTable(timesTable) {
     }
 }
 
+let localAnswerChecks = {values: ''} 
 function displayResultsTable(timesTable) {
     for (equation of timesTable) {
         const newEquation = document.createElement('p')
         newEquation.classList.add('results-equation')
         newEquation.textContent = equation
         //get saved answer checks (i.e. correct or incorrect) from local storage for the particular fact family 
-        const localAnswerChecks = localStorage.getItem('results' + equation[0] + equation[1])
+        localAnswerChecks.values = localStorage.getItem('results' + equation[0] + equation[1])
         //if there are save answer checks, if there is a particular answer check for the equation, style it green for correct and red for incorrect
-        if (localAnswerChecks) {
-            const answerChecks = JSON.parse(localAnswerChecks)
+        if (localAnswerChecks.values) {
+            const answerChecks = JSON.parse(localAnswerChecks.values)
             if (answerChecks[equation] === 'correct') {
                 newEquation.style.color = 'green'
             }
@@ -83,5 +84,6 @@ module.exports = {
     displayResultsTable,
     displayRandomQuestion,
     addNewStar,
-    styleEquations
+    styleEquations,
+    localAnswerChecks
 }

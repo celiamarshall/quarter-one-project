@@ -6,15 +6,23 @@ const trackerBox = document.querySelector('.tracker')
 const resultsBox = document.querySelector('.results')
 const indicator = document.querySelector('.indicator')
 const families = document.querySelectorAll('.fact-family')
+const form = document.querySelector('form')
+const numbers = document.querySelector('.numbers')
 let familyPickedBool = false
 let waitingToType = false
 let timesTable = []
 let storageObject = {}
 
 function makeClickedTimesTable() {
+    quizBox.textContent = ''
+    quizBox.classList.add('big')
     familyPickedBool = true
-    inputAnswer.focus()
     indicator.textContent = ''
+    form.classList.remove('hidden')
+    numbers.classList.remove('hidden')
+    resultsBox.classList.add('hidden')
+    document.querySelector('.last-time').classList.add('hidden')
+    inputAnswer.focus()
     //if the first number is 10
     if (event.target.textContent[1] === '0') {
         timesTable = templates.makeAnyTimesTable(10)
@@ -28,7 +36,13 @@ function makeClickedTimesTable() {
     //reset the storage object when a new fact family is clicked
     storageObject = {}
     templates.displayTimesTable(timesTable)
+    
     templates.displayResultsTable(timesTable)
+    
+    if (templates.localAnswerChecks.values) {
+        resultsBox.classList.remove('hidden')
+        document.querySelector('.last-time').classList.remove('hidden')
+    }
     templates.displayRandomQuestion(timesTable)
     //style the chosen fact family a lighter color
     for (family of families) {
@@ -70,7 +84,7 @@ function feedbackForIndicator() {
 
             setTimeout(() => {
                 indicator.textContent = ''
-            }, 1000)
+            }, 700)
 
             templates.addNewStar()
         }
@@ -82,7 +96,7 @@ function feedbackForIndicator() {
             waitingToType = false
             setTimeout(() => {
                 indicator.textContent = ''
-            }, 1000)
+            }, 700)
         }
     }
 }
@@ -128,21 +142,62 @@ function nextQuestion() {
             randomIndex = Math.floor(Math.random() * timesTable.length)
             quizBox.textContent = timesTable[randomIndex]
             timesTable.splice(randomIndex, 1)
-        }, 1000)
+        }, 700)
     }
 
     //otherwise, if a fact family has been picked and a user has entered input for all of the questions
     else if (familyPickedBool && !waitingToType) {
         setTimeout(() => {
+            cancelTimer()
             quizBox.textContent = 'Nice work!'
             indicator.textContent = ''
             familyPickedBool = false
-        }, 1000)
+            form.classList.add('hidden')
+            numbers.classList.add('hidden')
+            inputAnswer.value = ''
+        }, 700)
     }
+}
+
+let interval = null
+
+function startTimer(time) {
+    document.querySelector('.timer-container').classList.remove('hidden')
+    interval = setInterval(() => {
+
+        if (time <= 0) {
+            timesUp()
+            clearInterval(interval)
+        }
+
+        document.querySelector('.timer').textContent = time
+        time -= 1
+
+    }, 1000)
+}
+
+function cancelTimer() {
+    if (interval !== null) {
+        clearInterval(interval)
+    }
+}
+
+function timesUp() {
+    quizBox.textContent = "Times Up!"
+    form.classList.add('hidden')
+    numbers.classList.add('hidden')
+    inputAnswer.value = ''
+    setTimeout(() => {
+        quizBox.textContent = 'Nice work!'
+        indicator.textContent = ''
+        familyPickedBool = false
+    }, 3000)
 }
 
 module.exports = {
     makeClickedTimesTable,
     feedbackForIndicator,
     nextQuestion,
+    startTimer,
+    cancelTimer,
 }

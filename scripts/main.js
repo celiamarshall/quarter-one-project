@@ -8,11 +8,46 @@ if (starCount) {
     starsOnSite.textContent = starCount
 }
 
+let timeLimit = null
+
+const timeChoices = document.querySelectorAll('.time-choices')
+for (timeChoice of timeChoices) {
+    timeChoice.addEventListener('click', (event) => {
+        document.querySelector('.timer').textContent = timeLimit
+        timeLimit = event.target.textContent[0] + event.target.textContent[1]
+        if (timeLimit !== 'No') {
+            document.querySelector('.timer').textContent = timeLimit
+            document.querySelector('.timer-container').classList.remove('hidden')
+        }
+        else {
+            document.querySelector('.timer-container').classList.add('hidden')
+        }
+    })
+}
+
 const families = document.querySelectorAll('.fact-family')
+const alert = document.querySelector('.alert')
 for (family of families) {
     family.addEventListener('click', (event) => {
 
-        render.makeClickedTimesTable()
+        if(timeLimit === null) {
+            alert.classList.remove('d-none')
+            setTimeout(() => {
+                alert.classList.add('d-none')
+            }, 2000)
+        }
+
+        else {
+            render.makeClickedTimesTable()
+
+            render.cancelTimer()
+
+            if(timeLimit !== 'No'){
+                render.startTimer(Number(timeLimit))
+            }
+        }
+
+  
     })
 }
 
