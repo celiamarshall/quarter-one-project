@@ -1,10 +1,10 @@
-const render = require('./render') 
+const render = require('./render')
 
 const inputAnswer = document.querySelector('#answer')
 
 const starsOnSite = document.querySelector('.star-number')
 let starCount = Number(localStorage.getItem('stars'))
-if (starCount){
+if (starCount) {
     starsOnSite.textContent = starCount
 }
 
@@ -23,12 +23,20 @@ form.addEventListener('submit', (event) => {
     render.feedbackForIndicator()
 
     render.nextQuestion()
+
+    inputAnswer.focus()
 })
 
 const numberButtons = document.querySelectorAll('.number-button')
 for (button of numberButtons) {
     button.addEventListener('click', (event) => {
-        inputAnswer.value += button.textContent
+        inputAnswer.value += event.target.textContent
+        inputAnswer.focus()
     })
 }
+
+const deleteButton = document.querySelector('.delete-button')
+deleteButton.addEventListener('click', (event) => {
+    inputAnswer.value = inputAnswer.value.slice(0, inputAnswer.value.length - 1)
+})
 

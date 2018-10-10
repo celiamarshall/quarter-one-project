@@ -1,7 +1,6 @@
 const trackerBox = document.querySelector('.tracker')
 const resultsBox = document.querySelector('.results')
 const quizBox = document.querySelector('.quiz-box')
-const families = document.querySelectorAll('.fact-family')
 
 function makeAnyTimesTable(num) {
     const factFamily = []
@@ -46,7 +45,7 @@ function displayRandomQuestion(timesTable) {
     let randomIndex = Math.floor(Math.random() * timesTable.length)
     quizBox.textContent = timesTable[randomIndex]
     //remove the question at that index because it has already been attempted
-    timesTable.splice(randomIndex, 1)    
+    timesTable.splice(randomIndex, 1)
 }
 
 function addNewStar() {

@@ -31,7 +31,7 @@ function makeClickedTimesTable() {
     templates.displayResultsTable(timesTable)
     templates.displayRandomQuestion(timesTable)
     //style the chosen fact family a lighter color
-    for (family of families){
+    for (family of families) {
         family.classList.remove('lighter')
     }
     event.target.classList.add('lighter')
@@ -43,7 +43,7 @@ function feedbackForIndicator() {
         quizBox.textContent = ''
         inputAnswer.value = ''
         //when a user has ended a quiz, but they submit again, style all the buttons back to maroon so that one does not appear selected
-        for (family of families){
+        for (family of families) {
             family.classList.remove('lighter')
         }
         trackerBox.innerHTML = ''
