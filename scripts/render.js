@@ -23,6 +23,7 @@ function makeClickedTimesTable() {
     resultsBox.classList.add('hidden')
     document.querySelector('.last-time').classList.add('hidden')
     inputAnswer.focus()
+    inputAnswer.value = ''
     //if the first number is 10
     if (event.target.textContent[1] === '0') {
         timesTable = templates.makeAnyTimesTable(10)

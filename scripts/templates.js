@@ -69,6 +69,10 @@ function addNewStar() {
         localStorage.setItem('stars', 1)
     }
     starsOnSite.textContent = starCount
+    starsOnSite.style.color = 'gold'
+    setTimeout (() => {
+        starsOnSite.style.color = 'black'
+    }, 700)
 }
 
 function styleEquations(equation, answer, correctAnswer) {

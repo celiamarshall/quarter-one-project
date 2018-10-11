@@ -139,7 +139,7 @@ form {
 #answer-label {
     font-size: 35px;
     color: black;
-    min-width: 600px;
+    width: 100%;
 }
 
 #answer {
@@ -151,7 +151,7 @@ form {
     text-align: center;
     padding-top: 10px;
     padding-bottom: 10px;
-    max-width: 400px;
+    width: 66%;
 }
 
 .submit {
@@ -161,7 +161,7 @@ form {
     background-color: antiquewhite;
     border: 5px solid black;
     margin-left: 10px;
-    min-width: 190px;
+    width: 28%;
     max-height: 77px;
 }
 
