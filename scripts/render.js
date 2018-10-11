@@ -41,11 +41,8 @@ function makeClickedTimesTable() {
 
     templates.displayResultsTable(timesTable)
 
-    // if (templates.localAnswerChecks.values) {
-    //     resultsBox.classList.remove('hidden')
-    //     document.querySelector('.last-time').classList.remove('hidden')
-    // }
     templates.displayRandomQuestion(timesTable)
+    
     //style the chosen fact family a lighter color
     for (family of families) {
         family.classList.remove('lighter')
