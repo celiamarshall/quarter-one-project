@@ -4,7 +4,7 @@ Simply enter the site, choose the fact family that would like to practice, and g
 
 You will also be prompted to choose whether or not you would like to be timed, and for how long you would like the timer to run.
 
-![Example](./timer-screenshot.png?)
+![Example](./timer-screenshot.png?raw=true)
 
 Keep track of your stars as you, see how many multiplication equations you can answer correctly!
 
