@@ -1,4 +1,4 @@
-Welcome to the multiplication challenge! This is a fun and interactive site to practice your multiplicatoion facts.
+Welcome to the multiplication challenge! This is a fun and interactive site to practice your multiplication facts.
 
 ![Example](./homepage.png)
 
