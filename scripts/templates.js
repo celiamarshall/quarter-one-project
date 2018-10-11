@@ -19,7 +19,15 @@ function displayTimesTable(timesTable) {
     }
 }
 
-let localAnswerChecks = {values: ''} 
+// function getSavedData(timesTable) {
+//     for (equation of timesTable) {
+//         //get saved answer checks (i.e. correct or incorrect) from local storage for the particular fact family 
+//         savedData = localStorage.getItem('results' + equation[0] + equation[1]) || ''
+//     }
+
+// }
+
+let localAnswerChecks = { values: '' }
 function displayResultsTable(timesTable) {
     for (equation of timesTable) {
         const newEquation = document.createElement('p')

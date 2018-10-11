@@ -36,13 +36,14 @@ function makeClickedTimesTable() {
     //reset the storage object when a new fact family is clicked
     storageObject = {}
     templates.displayTimesTable(timesTable)
-    
+    trackerBox.classList.remove('hidden')
+
     templates.displayResultsTable(timesTable)
-    
-    if (templates.localAnswerChecks.values) {
-        resultsBox.classList.remove('hidden')
-        document.querySelector('.last-time').classList.remove('hidden')
-    }
+
+    // if (templates.localAnswerChecks.values) {
+    //     resultsBox.classList.remove('hidden')
+    //     document.querySelector('.last-time').classList.remove('hidden')
+    // }
     templates.displayRandomQuestion(timesTable)
     //style the chosen fact family a lighter color
     for (family of families) {
@@ -52,8 +53,8 @@ function makeClickedTimesTable() {
 }
 
 function feedbackForIndicator() {
-    //if user has not started quiz, or they have just finished a quiz
-    if (!quizBox.textContent || quizBox.textContent === 'Nice work!') {
+    //if user has just finished a quiz
+    if (quizBox.textContent === 'Nice work!') {
         quizBox.textContent = ''
         inputAnswer.value = ''
         //when a user has ended a quiz, but they submit again, style all the buttons back to maroon so that one does not appear selected
@@ -62,17 +63,17 @@ function feedbackForIndicator() {
         }
         trackerBox.innerHTML = ''
         resultsBox.innerHTML = ''
-        indicator.textContent = 'Pick a fact family!'
+        indicator.textContent = 'Click a fact family!'
         indicator.style.color = 'black'
     }
     //if user sees a question, but did not enter answer, we are waiting for them to type, so we will not run nextQuestion
-    else if (!inputAnswer.value) {
+    else if (quizBox.textContent !== 'Click a fact family!' && !inputAnswer.value) {
         indicator.textContent = 'Oops! Type in your answer.'
         indicator.style.color = 'black'
         waitingToType = true
     }
     //if user has entered an answer
-    else {
+    else if (quizBox.textContent !== 'Click a fact family!') {
         const bool = checkAnswer(quizBox.textContent, inputAnswer.value)
         inputAnswer.value = ''
 
@@ -150,6 +151,10 @@ function nextQuestion() {
         setTimeout(() => {
             cancelTimer()
             quizBox.textContent = 'Nice work!'
+            if (templates.localAnswerChecks.values) {
+                resultsBox.classList.remove('hidden')
+                document.querySelector('.last-time').classList.remove('hidden')
+            }
             indicator.textContent = ''
             familyPickedBool = false
             form.classList.add('hidden')
@@ -189,6 +194,10 @@ function timesUp() {
     inputAnswer.value = ''
     setTimeout(() => {
         quizBox.textContent = 'Nice work!'
+        if (templates.localAnswerChecks.values) {
+            resultsBox.classList.remove('hidden')
+            document.querySelector('.last-time').classList.remove('hidden')
+        }
         indicator.textContent = ''
         familyPickedBool = false
     }, 3000)

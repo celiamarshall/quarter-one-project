@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
     <link rel="icon" type="image/png" href="favicon.ico?" sizes="32x32" />
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script defer src="bundle.js"></script>
 </head>
 
@@ -17,18 +18,42 @@
         <div class="row">
 
             <aside class="col l2 selector">
-                <div class="waves-effect waves-light btn-large fact-family hoverable">0 facts</div>
-                <div class="waves-effect waves-light btn-large fact-family hoverable">1 facts</div>
-                <div class="waves-effect waves-light btn-large fact-family hoverable">2 facts</div>
-                <div class="waves-effect waves-light btn-large fact-family hoverable">3 facts</div>
-                <div class="waves-effect waves-light btn-large fact-family hoverable">4 facts</div>
-                <div class="waves-effect waves-light btn-large fact-family hoverable">5 facts</div>
-                <div class="waves-effect waves-light btn-large fact-family hoverable">6 facts</div>
-                <div class="waves-effect waves-light btn-large fact-family hoverable">7 facts</div>
-                <div class="waves-effect waves-light btn-large fact-family hoverable">8 facts</div>
-                <div class="waves-effect waves-light btn-large fact-family hoverable">9 facts</div>
-                <div class="waves-effect waves-light btn-large fact-family hoverable">10 facts</div>
+                <button data-target="modal1" class="modal-trigger waves-effect waves-light btn-large fact-family hoverable">0
+                    facts</button>
+                <button data-target="modal1" class="modal-trigger waves-effect waves-light btn-large fact-family hoverable">1
+                    facts</button>
+                <button data-target="modal1" class="modal-trigger waves-effect waves-light btn-large fact-family hoverable">2
+                    facts</button>
+                <button data-target="modal1" class="modal-trigger waves-effect waves-light btn-large fact-family hoverable">3
+                    facts</button>
+                <button data-target="modal1" class="modal-trigger waves-effect waves-light btn-large fact-family hoverable">4
+                    facts</button>
+                <button data-target="modal1" class="modal-trigger waves-effect waves-light btn-large fact-family hoverable">5
+                    facts</button>
+                <button data-target="modal1" class="modal-trigger waves-effect waves-light btn-large fact-family hoverable">6
+                    facts</button>
+                <button data-target="modal1" class="modal-trigger waves-effect waves-light btn-large fact-family hoverable">7
+                    facts</button>
+                <button data-target="modal1" class="modal-trigger waves-effect waves-light btn-large fact-family hoverable">8
+                    facts</button>
+                <button data-target="modal1" class="modal-trigger waves-effect waves-light btn-large fact-family hoverable">9
+                    facts</button>
+                <button data-target="modal1" class="modal-trigger waves-effect waves-light btn-large fact-family hoverable">10
+                    facts</button>
             </aside>
+
+            <!-- Modal Structure -->
+            <div id="modal1" class="modal">
+                <div class="modal-content">
+                    <h4>Timer</h4>
+                    <p class="time-choice-label">How much time do you want?</p>
+                </div>
+                <div class="modal-footer">
+                    <a href="#!" class="waves-effect waves-light btn hoverable time-choices">10 Seconds</a>
+                    <a href="#!" class="waves-effect waves-light btn hoverable time-choices">60 Seconds</a>
+                    <a href="#!" class="waves-effect waves-light btn hoverable time-choices">No Timer</a>
+                </div>
+            </div>
 
             <div class="col l10">
                 <header class="row">
@@ -40,62 +65,54 @@
                             <img class="star" src="star.svg">
                             <p class="star-number">0</p>
                         </div>
-
-                    </div>
                 </header>
 
                 <div class="row">
-                    <div class="col l3 valign-wrapper timer-container">
+                    <div class="col l3 valign-wrapper timer-container hidden">
                         <p class="timer-label">Time Left:</p>
                         <p class="timer"></p>
                     </div>
-                    <div class="col l9 valign-wrapper">
-                        <p class="time-choice-label">How much time do you want?</p>
-                        <div class="waves-effect waves-light btn hoverable time-choices">45 Seconds</div>
-                        <div class="waves-effect waves-light btn hoverable time-choices">60 Seconds</div>
-                        <div class="waves-effect waves-light btn hoverable time-choices">No Timer</div>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <p class="alert d-none">Oops! Choose a time limit first!</p>
                 </div>
 
                 <div class="row">
                     <div class="col l7">
                         <div class="box z-depth-3">
-                            <p class="quiz-box">Choose a time limit and then answer as many questions as you can!</p>
+                            <p class="quiz-box">Click a fact family!</p>
                         </div>
                     </div>
 
                     <div class="col l5">
-                        <div class="box z-depth-3 tracker"></div>
+                        <div class="box z-depth-3 tracker hidden"></div>
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="col l7">
                         <div class="row">
-                            <div class="col l6">
-                                <form>
-                                    <label id="answer-label" for="answer">Answer:</label>
-                                    <input type="number" id="answer" autofocus>
-                                    <input type="submit" class="submit">
-                                </form>
-                                <p class="indicator"></p>
-                            </div>
+                            <form>
+                                <label id="answer-label" for="answer">Answer:</label>
+                                <input type="number" id="answer" autofocus>
+                                <input type="submit" class="submit">
+                            </form>
+                        </div>
+                        <div class="row">
                             <div class="col l6 numbers">
-                                <div class="waves-effect waves-light btn-large hoverable number-button">0</div>
-                                <div class="waves-effect waves-light btn-large hoverable number-button">1</div>
-                                <div class="waves-effect waves-light btn-large hoverable number-button">2</div>
-                                <div class="waves-effect waves-light btn-large hoverable number-button">3</div>
-                                <div class="waves-effect waves-light btn-large hoverable number-button">4</div>
-                                <div class="waves-effect waves-light btn-large hoverable number-button">5</div>
-                                <div class="waves-effect waves-light btn-large hoverable number-button">6</div>
-                                <div class="waves-effect waves-light btn-large hoverable number-button">7</div>
-                                <div class="waves-effect waves-light btn-large hoverable number-button">8</div>
-                                <div class="waves-effect waves-light btn-large hoverable number-button">9</div>
-                                <div class="waves-effect waves-light btn-large hoverable delete-button">Delete</div>
+                                <div class="waves-effect waves-light btn hoverable keypad-button">Keypad</div>
+                                <div class="waves-effect waves-light btn-large hoverable number-button hidden">0</div>
+                                <div class="waves-effect waves-light btn-large hoverable number-button hidden">1</div>
+                                <div class="waves-effect waves-light btn-large hoverable number-button hidden">2</div>
+                                <div class="waves-effect waves-light btn-large hoverable number-button hidden">3</div>
+                                <div class="waves-effect waves-light btn-large hoverable number-button hidden">4</div>
+                                <div class="waves-effect waves-light btn-large hoverable number-button hidden">5</div>
+                                <div class="waves-effect waves-light btn-large hoverable number-button hidden">6</div>
+                                <div class="waves-effect waves-light btn-large hoverable number-button hidden">7</div>
+                                <div class="waves-effect waves-light btn-large hoverable number-button hidden">8</div>
+                                <div class="waves-effect waves-light btn-large hoverable number-button hidden">9</div>
+                                <div class="waves-effect waves-light btn-large hoverable delete-button hidden">Delete</div>
+                            </div>
+
+                            <div class="col l6">
+                                <p class="indicator"></p>
                             </div>
                         </div>
                     </div>

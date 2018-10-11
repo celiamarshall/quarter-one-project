@@ -13,9 +13,17 @@ let timeLimit = null
 const timeChoices = document.querySelectorAll('.time-choices')
 for (timeChoice of timeChoices) {
     timeChoice.addEventListener('click', (event) => {
+        render.cancelTimer()
+        const elem = document.querySelector('.modal')
+        const instance = M.Modal.getInstance(elem);
+        instance.close()
+        inputAnswer.focus()
+
         document.querySelector('.timer').textContent = timeLimit
         timeLimit = event.target.textContent[0] + event.target.textContent[1]
         if (timeLimit !== 'No') {
+            render.startTimer(Number(timeLimit))
+
             document.querySelector('.timer').textContent = timeLimit
             document.querySelector('.timer-container').classList.remove('hidden')
         }
@@ -26,30 +34,26 @@ for (timeChoice of timeChoices) {
 }
 
 const families = document.querySelectorAll('.fact-family')
-const alert = document.querySelector('.alert')
+//const alert = document.querySelector('.alert')
 for (family of families) {
     family.addEventListener('click', (event) => {
 
-        if(timeLimit === null) {
-            alert.classList.remove('d-none')
-            setTimeout(() => {
-                alert.classList.add('d-none')
-            }, 2000)
+        render.makeClickedTimesTable()
+
+        render.cancelTimer()
+
+        if (timeLimit !== 'No' && timeLimit !== null) {
+            console.log('hi')
+            render.startTimer(Number(timeLimit))
         }
 
-        else {
-            render.makeClickedTimesTable()
-
-            render.cancelTimer()
-
-            if(timeLimit !== 'No'){
-                render.startTimer(Number(timeLimit))
-            }
-        }
-
-  
     })
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+    const elems = document.querySelectorAll('.modal');
+    const instances = M.Modal.init(elems);
+  });
 
 const form = document.querySelector('form')
 form.addEventListener('submit', (event) => {
@@ -75,3 +79,10 @@ deleteButton.addEventListener('click', (event) => {
     inputAnswer.value = inputAnswer.value.slice(0, inputAnswer.value.length - 1)
 })
 
+const keypadButton = document.querySelector('.keypad-button')
+keypadButton.addEventListener('click', (event) => {
+    for (button of numberButtons) {
+        button.classList.toggle('hidden')
+    }
+    deleteButton.classList.toggle('hidden')
+})
