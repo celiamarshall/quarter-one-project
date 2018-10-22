@@ -13,3 +13,11 @@ You will also be prompted to choose whether or not you would like to be timed, a
 ![Alt text](/timer-screenshot.png)
 
 Keep track of your stars as you go, see how many multiplication equations you can answer correctly!
+
+Visit the deployed site here: http://multiplication-challenge.surge.sh
+
+To initialize the project, run the following in your command line:
+```
+npm install
+npm run dev
+```
