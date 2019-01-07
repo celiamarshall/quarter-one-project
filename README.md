@@ -19,6 +19,10 @@ npm run dev
 * JavaScript
 * Materialize
 
+### Deployed Site 
+Visit the deployed site here: http://multiplication-challenge.surge.sh
+
+
 ![Alt text](/homepage.png)
 
 Keep track of your progress as you go!The site will show you your results from the last time you practiced a particular fact family.
@@ -33,5 +37,5 @@ You will also be prompted to choose whether or not you would like to be timed, a
 
 Keep track of your stars as you go, see how many multiplication equations you can answer correctly!
 
-Visit the deployed site here: http://multiplication-challenge.surge.sh
+
 
