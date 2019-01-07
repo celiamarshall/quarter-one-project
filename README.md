@@ -1,4 +1,23 @@
-Welcome to the multiplication challenge - a fun and interactive site to practice your multiplication facts!
+# Multiplication Challenge
+Welcome to the multiplication challenge - a fun and interactive site for students to practice multiplication facts!
+
+### Features
+* Practice multiplication fact families from 0 - 10
+* Keep track of which facts you know, and which need more practice
+* Optional timer to practice speed and accuracy
+
+### Instructions
+To initialize the project, run the following in your command line:
+```
+npm install
+npm run dev
+```
+
+### Technology
+* HTML
+* CSS
+* JavaScript
+* Materialize
 
 ![Alt text](/homepage.png)
 
@@ -16,8 +35,3 @@ Keep track of your stars as you go, see how many multiplication equations you ca
 
 Visit the deployed site here: http://multiplication-challenge.surge.sh
 
-To initialize the project, run the following in your command line:
-```
-npm install
-npm run dev
-```
